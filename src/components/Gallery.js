@@ -5,6 +5,7 @@ import "../styles/Gallery.css"
 export default function Gallery({ images }) {
     return (
         <div id="gallery">
+
             {images.map((img, i) => (
                 <Link
                     className="photo-link"
@@ -14,6 +15,7 @@ export default function Gallery({ images }) {
                     <img src={img.url} />
                 </Link>
             ))}
+            
         </div>
     )
 }

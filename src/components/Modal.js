@@ -13,14 +13,15 @@ export default function Modal() {
     let { img: id } = useParams()
 
     useEffect(() => {
-        console.log(history)
         toggleVisible(true)
         document.body.style.position = "fixed"
+
         fetch(`https://boiling-refuge-66454.herokuapp.com/images/${id}`)
             .then((res) => {
                 if (!res.ok) return console.log("Error")
                 res.json().then(data => changeInfo(data))
             })
+
         return () => document.body.style.position = "relative"
     }, [])
 
@@ -38,19 +39,24 @@ export default function Modal() {
                 style={{ animation: `${visible ? "fade-in" : "fade-out"} 0.25s` }}
                 onAnimationEnd={() => { if (!visible) history.goBack() }}
             >
+
                 <div id="modal-close">X</div>
+
                 <div className="placeholder">
                     <img
                         className="modal-img"
                         src={info?.url}
                     />
                 </div>
+
                 <ul className="modal-comments">
                     {info?.comments.map((comment, i) => (
                         <Comment key={i} text={comment.text} date={new Date(comment.date).toUTCString()} />
                     ))}
                 </ul>
+
                 <Input />
+
             </div>
         </div>
     )

@@ -1,5 +1,4 @@
-module.exports = {
-    mode: "development",
+let config = {
     entry: {
         index: __dirname + "/src/App.js"
     },
@@ -26,7 +25,14 @@ module.exports = {
         ]
     },
     devServer: {
+        historyApiFallback: true,
         contentBase: __dirname + "/src/public/",
-        port: 3000
+        port: 3000,
+        open: true
     }
+}
+
+module.exports = (env, argv) => {
+    argv.prod ? config.mode = "production" : config.mode = "development"
+    return config
 }
