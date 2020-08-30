@@ -16,10 +16,6 @@ function App() {
             .then(res => {
                 if (!res.ok) return console.log("Error on images fetching")
                 res.json().then(imgs => setImages(imgs))
-
-                if(localStorage.getItem("theme")){
-                    document.querySelector("html").dataset.theme = localStorage.getItem("theme")
-                }
             })
     }, [])
 
@@ -27,7 +23,7 @@ function App() {
 
     return (
         <Router history={history}>
-            <ThemeSwitcher />
+            <ThemeSwitcher width={75} height={25} />
 
             <Suspense fallback={<Spinner animation="border" />}>
                 <Gallery images={images} />
