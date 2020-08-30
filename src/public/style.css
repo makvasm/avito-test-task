@@ -1,3 +1,5 @@
+@import "../styles/Main.css";
+
 * {
     padding: 0;
     margin: 0;
@@ -12,4 +14,5 @@ html, body {
     margin-right: -4px; /*COMPENSATES THE VERTICAL SCROLLBAR*/
     overflow-x: hidden; /*REMOVES HORIZONTAL SCROLLBAR THE ABOVE CREATES*/
     margin-top: 0px; /*COMPENSATES THE HORIZONTAL SCROLLBAR*/
+    background-color: var(--background);
 }

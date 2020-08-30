@@ -3,6 +3,7 @@ import ReactDOM from "react-dom"
 import { Route, BrowserRouter as Router, useHistory } from "react-router-dom"
 import Gallery from "./components/Gallery"
 import Spinner from "react-bootstrap/Spinner"
+import ThemeSwitcher from "./components/ThemeSwitcher"
 
 const Modal = React.lazy(() => import("./components/Modal"))
 
@@ -15,6 +16,10 @@ function App() {
             .then(res => {
                 if (!res.ok) return console.log("Error on images fetching")
                 res.json().then(imgs => setImages(imgs))
+
+                if(localStorage.getItem("theme")){
+                    document.querySelector("html").dataset.theme = localStorage.getItem("theme")
+                }
             })
     }, [])
 
@@ -22,6 +27,7 @@ function App() {
 
     return (
         <Router history={history}>
+            <ThemeSwitcher />
 
             <Suspense fallback={<Spinner animation="border" />}>
                 <Gallery images={images} />

@@ -51,7 +51,7 @@ export default function Modal() {
 
                 <ul className="modal-comments">
                     {info?.comments.map((comment, i) => (
-                        <Comment key={i} text={comment.text} date={new Date(comment.date).toUTCString()} />
+                        <Comment key={i} text={comment.text} date={new Date(comment.date).toLocaleString()} />
                     ))}
                 </ul>
 
