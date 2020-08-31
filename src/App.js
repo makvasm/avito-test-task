@@ -23,7 +23,7 @@ function App() {
 
     return (
         <Router history={history}>
-            <ThemeSwitcher width={75} height={25} />
+            <ThemeSwitcher width={50} height={25} />
 
             <Suspense fallback={<Spinner animation="border" />}>
                 <Gallery images={images} />

@@ -8,7 +8,7 @@
     height: 100%;
 
     color: var(--text);
-    background-color: var(--background);
+    background-color: var(--modal-background);
 }
 
 .modal {
