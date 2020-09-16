@@ -1,37 +1,35 @@
 @import "./Main.css";
-
 #gallery {
-    padding: 10px;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
-
-    background-color: var(--background);
+  padding: 10px;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  background-color: var(--background);
 }
 
-#gallery > img, .photo-link{
-    width: 300px;
-    height: 200px;
-    margin: auto;
-    cursor: pointer;
+#gallery>img, .photo-link {
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  cursor: pointer;
 }
 
 @media (max-width: 1000px) {
-    #gallery {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  #gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 650px) {
-    #gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  #gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 400px) {
-    #gallery {
-        display: flex;
-        flex-direction: column;
-    }
+  #gallery {
+    display: flex;
+    flex-direction: column;
+  }
 }
